@@ -39,14 +39,13 @@ catch(err){ return err;}
 
 }
 
-
 function updateBirthdays() {
     workingOnIt();
     let returnMsg = deleteBirthdays();
     if (returnMsg == true) {
-
 try{
   //define our terms
+  //why did I do this redundancy thing? ... change this 
         let ssBirthdays = SpreadsheetApp.getActiveSpreadsheet();
         let tabBirthdays = ssBirthdays.getSheetByName('birthdays');
         let lastRow = tabBirthdays.getLastRow();
@@ -69,16 +68,13 @@ try{
         
 }
 catch(err){
-
 workingOnIt("errorMsg", err);
 console.error(err);
 }
-      
+     
     } else {
           workingOnIt("errorMsg",returnMsg);
     }
-    
-    
 }
 
 
